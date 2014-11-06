@@ -49,8 +49,7 @@ def getData(l):
     global lang
     lang = my_import(l+"."+l)
     rv = {'data':'', "needCTCSS":False, "source":"worldweatheronline"}
-
-    REQ_URL='http://free.worldweatheronline.com/feed/weather.ashx?q={LAT},{LON}&format=json&num_of_days=2&key={API_KEY}'
+    REQ_URL='http://api.worldweatheronline.com/free/v2/weather.ashx?q={LAT},{LON}&format=json&num_of_days=2&key={API_KEY}'
     params = {'LAT':str(config.latitude), 'LON':str(config.longitude),\
         'API_KEY':config.api_key}
 
@@ -61,6 +60,10 @@ def getData(l):
     w = weather['data']['current_condition'][0]
     f0 = weather['data']['weather'][0]
     f1 = weather['data']['weather'][1]
+    # additionally after changing to APIv2 we need some more of them
+    f01 = weather['data']['weather'][0]['hourly'][0] # last array numerator is for taking _first_ forecast data
+    f11 = weather['data']['weather'][1]['hourly'][0] # you may change it if you want, take a look at API before.
+    
     wc = lang.wwo_weather_codes
 
     # observation time gives us time in UTC, like '09:50 PM', but it gives no date.
