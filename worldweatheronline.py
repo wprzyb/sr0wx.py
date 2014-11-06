@@ -99,21 +99,21 @@ def getData(l):
 
         'FCAST0_TEMP_MIN_C':lang.cardinal(int(f0['mintempC'])),
         'FCAST0_TEMP_MAX_C':lang.cardinal(int(f0['maxtempC']),lang.C),
-        'FCAST0_WEATHER':lang.removeDiacritics(wc[f0['weatherCode']], remove_spaces=True),
-        'FCAST0_WIND_DIR':wind_direction(f0['winddir16Point']),
-        'FCAST0_WIND_DIR_DEG':lang.cardinal(int(f0['winddirDegree']),lang.deg),
-        'FCAST0_WIND_SPEED_KMPH':lang.cardinal(int(f0['windspeedKmph']),lang.kmPh),
-        'FCAST0_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(f0['windspeedKmph'])),lang.mPs),
-        'FCAST0_WIND_SPEED_MI':int(f0['windspeedMiles']),
+        'FCAST0_WEATHER':lang.removeDiacritics(wc[f01['weatherCode']], remove_spaces=True),
+        'FCAST0_WIND_DIR':wind_direction(f01['winddir16Point']),
+        'FCAST0_WIND_DIR_DEG':lang.cardinal(int(f01['winddirDegree']),lang.deg),
+        'FCAST0_WIND_SPEED_KMPH':lang.cardinal(int(f01['windspeedKmph']),lang.kmPh),
+        'FCAST0_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(f01['windspeedKmph'])),lang.mPs),
+        'FCAST0_WIND_SPEED_MI':int(f01['windspeedMiles']),
 
         'FCAST1_TEMP_MIN_C':lang.cardinal(int(f1['mintempC'])),
         'FCAST1_TEMP_MAX_C':lang.cardinal(int(f1['maxtempC']),lang.C),
-        'FCAST1_WEATHER':lang.removeDiacritics(wc[f1['weatherCode']], remove_spaces=True),
-        'FCAST1_WIND_DIR':wind_direction(f1['winddir16Point']),
-        'FCAST1_WIND_DIR_DEG':lang.cardinal(int(f1['winddirDegree']),lang.deg),
-        'FCAST1_WIND_SPEED_KMPH':lang.cardinal(int(f1['windspeedKmph']),lang.kmPh),
-        'FCAST1_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(f1['windspeedKmph'])),lang.mPs),
-        'FCAST1_WIND_SPEED_MI':int(f1['windspeedMiles']),
+        'FCAST1_WEATHER':lang.removeDiacritics(wc[f11['weatherCode']], remove_spaces=True),
+        'FCAST1_WIND_DIR':wind_direction(f11['winddir16Point']),
+        'FCAST1_WIND_DIR_DEG':lang.cardinal(int(f11['winddirDegree']),lang.deg),
+        'FCAST1_WIND_SPEED_KMPH':lang.cardinal(int(f11['windspeedKmph']),lang.kmPh),
+        'FCAST1_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(f11['windspeedKmph'])),lang.mPs),
+        'FCAST1_WIND_SPEED_MI':int(f11['windspeedMiles']),
     }
 
     rv['data']=lang.removeDiacritics(config.template.format(**data))
