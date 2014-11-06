@@ -97,8 +97,8 @@ def getData(l):
         'CURRENT_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(w['windspeedKmph'])),lang.mPs),
         'CURRENT_WIND_SPEED_MI':lang.cardinal(int(w['windspeedMiles']),lang.MiPh),
 
-        'FCAST0_TEMP_MIN_C':lang.cardinal(int(f0['tempMinC'])),
-        'FCAST0_TEMP_MAX_C':lang.cardinal(int(f0['tempMaxC']),lang.C),
+        'FCAST0_TEMP_MIN_C':lang.cardinal(int(f0['mintempC'])),
+        'FCAST0_TEMP_MAX_C':lang.cardinal(int(f0['maxtempC']),lang.C),
         'FCAST0_WEATHER':lang.removeDiacritics(wc[f0['weatherCode']], remove_spaces=True),
         'FCAST0_WIND_DIR':wind_direction(f0['winddir16Point']),
         'FCAST0_WIND_DIR_DEG':lang.cardinal(int(f0['winddirDegree']),lang.deg),
@@ -106,8 +106,8 @@ def getData(l):
         'FCAST0_WIND_SPEED_MPS':lang.cardinal(kmph2mps(int(f0['windspeedKmph'])),lang.mPs),
         'FCAST0_WIND_SPEED_MI':int(f0['windspeedMiles']),
 
-        'FCAST1_TEMP_MIN_C':lang.cardinal(int(f1['tempMinC'])),
-        'FCAST1_TEMP_MAX_C':lang.cardinal(int(f1['tempMaxC']),lang.C),
+        'FCAST1_TEMP_MIN_C':lang.cardinal(int(f1['mintempC'])),
+        'FCAST1_TEMP_MAX_C':lang.cardinal(int(f1['maxtempC']),lang.C),
         'FCAST1_WEATHER':lang.removeDiacritics(wc[f1['weatherCode']], remove_spaces=True),
         'FCAST1_WIND_DIR':wind_direction(f1['winddir16Point']),
         'FCAST1_WIND_DIR_DEG':lang.cardinal(int(f1['winddirDegree']),lang.deg),
